@@ -24,7 +24,7 @@ def sum_questions(groups_declarations, function_criteria):
 
 
 groups_declarations = list()
-with open("puzzleInput_test.txt", "r") as fp:
+with open("puzzleInput.txt", "r") as fp:
     group_declarations = list()
     for row in fp:
         if row != "\n":
