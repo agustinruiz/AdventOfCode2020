@@ -24,18 +24,19 @@ def bag_can_contain(parent, child, rules):
     for count, bag in value:
         if bag == child:
             return True
-        return bag_can_contain(bag, child, rules)
-    return
+        if bag_can_contain(bag, child, rules):
+            return True
+    return False
 
 
 rules = list()
-with open("puzzleInput_test.txt", "r") as fp:
+with open("puzzleInput.txt", "r") as fp:
     rules = [rule.rstrip() for rule in fp]
 
 rules_dict = dict()
 for rule in rules:
     rules_dict.update(transform_rule_to_dict(rule))
-print(rules_dict)
+
 
 count = 0
 for bag in rules_dict:
