@@ -41,7 +41,7 @@ def number_of_bags_inside(bag, rules):
 
 
 rules = list()
-with open("puzzleInput_test2.txt", "r") as fp:
+with open("puzzleInput.txt", "r") as fp:
     rules = [rule.rstrip() for rule in fp]
 
 rules_dict = dict()
