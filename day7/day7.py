@@ -29,8 +29,19 @@ def bag_can_contain(parent, child, rules):
     return False
 
 
+def number_of_bags_inside(bag, rules):
+    value = rules[bag]
+    if not value:
+        return 0
+    number_of_bags = 0
+    for bag_count, bag_inside in value:
+        number_of_bags += int(bag_count) + int(bag_count) * \
+            number_of_bags_inside(bag_inside, rules)
+    return number_of_bags
+
+
 rules = list()
-with open("puzzleInput.txt", "r") as fp:
+with open("puzzleInput_test2.txt", "r") as fp:
     rules = [rule.rstrip() for rule in fp]
 
 rules_dict = dict()
@@ -44,3 +55,6 @@ for bag in rules_dict:
         count += 1
 
 print(f"Number of bags that can contain shiny gold: {count}")
+
+print(
+    f"Number of bags inside the shiny gold bag: {number_of_bags_inside('shiny gold', rules_dict)}")
