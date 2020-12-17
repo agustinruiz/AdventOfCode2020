@@ -2,7 +2,7 @@ from io import open
 from interpreter import Interpreter
 
 instructions = list()
-with open("puzzleInput_test.txt", "r") as fp:
+with open("puzzleInput.txt", "r") as fp:
     instructions = [inst.rstrip() for inst in fp]
 
 interpreter = Interpreter(0, 0, instructions)
