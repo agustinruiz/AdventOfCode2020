@@ -78,3 +78,13 @@ In this list, adding up all of the numbers from 15 through 40 produces the inval
 To find the encryption weakness, add together the smallest and largest number in this contiguous range; in this example, these are 15 and 47, producing 62.
 
 What is the encryption weakness in your XMAS-encrypted list of numbers?
+
+Your puzzle answer was 35602097.
+
+Both parts of this puzzle are complete! They provide two gold stars: \*\*
+
+At this point, you should return to your Advent calendar and try another puzzle.
+
+If you still want to see it, you can get your puzzle input.
+
+You can also [Share] this puzzle.

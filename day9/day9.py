@@ -1,7 +1,7 @@
 from io import open
 
 lines = list()
-with open("puzzleInput_test.txt", "r") as fp:
+with open("puzzleInput.txt", "r") as fp:
     lines = [line for line in fp]
 
 
@@ -32,7 +32,7 @@ def find_contiguous_set(index, number, number_list):
                 break
 
 
-first_wrong = find_first_wrong(5, lines)
+first_wrong = find_first_wrong(25, lines)
 print(f"First number without the property: {first_wrong}")
 
 contiguous_set = find_contiguous_set(first_wrong[0], first_wrong[1], lines)
