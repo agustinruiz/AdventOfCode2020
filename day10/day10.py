@@ -1,22 +1,22 @@
 from io import open
 
 adapters_joltage = list()
-with open("puzzleInput_test.txt", "r") as fp:
+with open("puzzleInput.txt", "r") as fp:
     adapters_joltage = [int(joltage) for joltage in fp]
 
+# add charging outlet joltaje
+adapters_joltage.append(0)
 adapters_joltage.sort()
+# add device's built-in adapter
+adapters_joltage.append(adapters_joltage[len(adapters_joltage) - 1]+3)
 
 
 def find_differences_list(adapters_joltage):
     differences = []
-    # El primer adaptavor va conectado a un jolt de 0 => la diferencia es el calor del 1er adaptador
-    differences.append(adapters_joltage[0])
     for index, joltage in enumerate(adapters_joltage):
         if index == len(adapters_joltage) - 1:
             break
         differences.append(adapters_joltage[index+1]-joltage)
-    # El adaptador interno de tu dispositivo tiene 3 joults de diferencia con el ultimo (el mas alto)
-    differences.append(3)
     return differences
 
 
